@@ -41,14 +41,14 @@ module Partial_Demo
             template=template.is_a?(Array) ? ('_' + template.first.class.to_s.downcase).to_sym : ('_' + template.class.to_s.downcase).to_sym
           end
           if locals.is_a?(Hash)
-            erb(template,{:layout => false},locals)      
+            erb(template,{},locals)      
           elsif locals
             locals=[locals] unless locals.respond_to?(:inject)
             locals.inject([]) do |output,element|
-              output << erb(template,{:layout=>false},{template.to_s.delete("_").to_sym => element})
+              output << erb(template,{},{template.to_s.delete("_").to_sym => element})
             end.join("\n")
           else 
-            erb(template,{:layout => false})
+            erb(template,{})
           end
         end
 
