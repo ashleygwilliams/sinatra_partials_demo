@@ -1,7 +1,7 @@
 class Cat
 	attr_accessor :name, :color
 
-	NAMES = ["cheeto", "aurelia", "mr. mice", "hadoop"]
+	NAMES = ["cheeto", "aurelia", "zak", "hadoop", "ginger", "gorby", "seatac"]
 	COLORS = ["orange", "tortoise shell", "black", "grey"]
 
 	def initialize 

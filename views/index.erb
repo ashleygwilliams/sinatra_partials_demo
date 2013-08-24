@@ -5,10 +5,14 @@
   </li>
   <li>
     <h2>Intermediate Partial</h2>
-    <%= int_partial :mouse, "cheeseman" %>
-    <%= int_partial :mouse, {:mouse=>"cheeseman"} %>
+    <section class="row-fluid">
+      <%= int_partial :mouse, "cheeseman" %>
+      <%= int_partial :mouse, {:mouse=>"cheeseman"} %>
+    </section>
   </li>
    <li>
     <h2>Advanced Partial</h2>
-    <%= adv_partial @cat %>
+    <section class="row-fluid">
+      <%= adv_partial @cats %>
+    </section>
   </li>
