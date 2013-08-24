@@ -27,10 +27,10 @@ module Partial_Demo
           erb template
         end
     
-        def int_partial(template,locals=nil)
+        def int_partial(template, locals=nil)
           locals = locals.is_a?(Hash) ? locals : {template.to_sym => locals}
-          template=('_' + template.to_s).to_sym
-          erb template, locals       
+          template = ('_' + template.to_s).to_sym
+          erb template, {}, locals        
         end
    
         def adv_partial(template,locals=nil)
