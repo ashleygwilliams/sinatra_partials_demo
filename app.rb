@@ -21,10 +21,6 @@ module Partial_Demo
       erb :index
     end
 
-    get '/forbidden' do
-      403
-    end
-
     helpers do
 
         def beg_partial(template)
@@ -45,14 +41,14 @@ module Partial_Demo
             template=template.is_a?(Array) ? ('_' + template.first.class.to_s.downcase).to_sym : ('_' + template.class.to_s.downcase).to_sym
           end
           if locals.is_a?(Hash)
-            erb(template,{},locals)      
+            erb template, {}, locals      
           elsif locals
             locals=[locals] unless locals.respond_to?(:inject)
             locals.inject([]) do |output,element|
               output << erb(template,{},{template.to_s.delete("_").to_sym => element})
             end.join("\n")
           else 
-            erb(template,{})
+            erb template, {}
           end
         end
 
