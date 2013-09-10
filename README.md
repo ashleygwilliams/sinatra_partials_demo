@@ -6,11 +6,13 @@ http://recipes.sinatrarb.com/p/helpers/partials?#article
 ## Up and running
 
 with shotgun:
+
 1. `bundle install`
 2. `shotgun`
 3. visit `localhost:9393`
 
 with rerun:
+
 1. `bundle install`
 2. `rerun -- rackup config.ru`
 3.  visit `localhost:9292`
