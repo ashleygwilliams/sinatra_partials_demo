@@ -6,7 +6,7 @@ Dir.glob('./lib/*.rb') do |model|
 end
 
 module Partial_Demo
-  class App < Sinatra::Application
+  class App < Sinatra::Base
 
     before do 
       @cat = Cat.new
