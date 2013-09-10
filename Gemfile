@@ -4,5 +4,6 @@ gem "sinatra"
 
 group :development do
   gem "shotgun"
+  gem "rerun"
   gem "tux"
 end
