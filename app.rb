@@ -11,7 +11,7 @@ module Partial_Demo
     before do 
       @cat = Cat.new
       @cats = []
-      rand(20).times do
+      rand(1..20).times do
         @cats << Cat.new
       end
     end
