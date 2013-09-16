@@ -23,11 +23,11 @@ module Partial_Demo
 
     helpers do
 
-        def beg_partial(template)
+        def simple_partial(template)
           erb template
         end
     
-        def int_partial(template, locals=nil)
+        def intermediate_partial(template, locals=nil)
           locals = locals.is_a?(Hash) ? locals : {template.to_sym => locals}
           template = :"_#{template}"
           erb template, {}, locals        
