@@ -29,16 +29,16 @@ module Partial_Demo
     
         def int_partial(template, locals=nil)
           locals = locals.is_a?(Hash) ? locals : {template.to_sym => locals}
-          template = ('_' + template.to_s).to_sym
+          template = :"_#{template}"
           erb template, {}, locals        
         end
    
         def adv_partial(template,locals=nil)
           if template.is_a?(String) || template.is_a?(Symbol)
-            template=('_' + template.to_s).to_sym
+            template = :"_#{template}"
           else
             locals=template
-            template=template.is_a?(Array) ? ('_' + template.first.class.to_s.downcase).to_sym : ('_' + template.class.to_s.downcase).to_sym
+            template = template.is_a?(Array) ? :"_#{template.first.class.to_s.downcase}" : :"_#{template.class.to_s.downcase}"
           end
           if locals.is_a?(Hash)
             erb template, {}, locals      
@@ -48,7 +48,7 @@ module Partial_Demo
               output << erb(template,{},{template.to_s.delete("_").to_sym => element})
             end.join("\n")
           else 
-            erb template, {}
+            erb template
           end
         end
 
