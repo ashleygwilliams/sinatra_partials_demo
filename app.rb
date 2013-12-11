@@ -21,6 +21,10 @@ module Partial_Demo
       erb :index
     end
 
+    get '/cats' do
+      erb :test
+    end
+
     helpers do
 
         def simple_partial(template)
